@@ -2,6 +2,8 @@
 # iw04
 iOS assignment 4: Image Classification App.
 
+[数据集下载](https://box.nju.edu.cn/f/0fde100e73b2405abe1e/?dl=1)
+
 作业 4-1 
   请基于模板工程(starter/HealthySnacks)，运用CoreML开发一个利用卷积神经网络分类snacks的App
 
