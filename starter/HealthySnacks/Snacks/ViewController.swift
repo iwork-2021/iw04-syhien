@@ -143,10 +143,14 @@ extension ViewController {
             } else {
                 let result = results[0].identifier
                 let confidence = results[0].confidence
-                self.resultsLabel.text = result
-                self.resultsLabel.text! += "\n"
-                self.resultsLabel.text! += String(format: "%.1f%%", confidence * 100)
-                print(result)
+                if confidence < 0.8 {
+                    self.resultsLabel.text! = "It is " + result + "? Not sure"
+                } else {
+                    self.resultsLabel.text = result
+                    self.resultsLabel.text! += "\n"
+                    self.resultsLabel.text! += String(format: "%.1f%%", confidence * 100)
+                    print(result)
+                }
             }
         } else if let error = error {
             self.resultsLabel.text = "Error: \(error.localizedDescription)"
