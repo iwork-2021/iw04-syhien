@@ -1,0 +1,3 @@
+[submodule "snacks-health-dataset"]
+	path = snacks-health-dataset
+	url = https://github.com/syhien/snacks-health-dataset.git
