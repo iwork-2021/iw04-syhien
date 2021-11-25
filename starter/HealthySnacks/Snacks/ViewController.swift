@@ -56,6 +56,21 @@ class ViewController: UIViewController {
         }
     }()
     
+    lazy var healthClassificationRequest: VNCoreMLRequest = {
+         do{
+             let classifier = try HealthClassifier(configuration: MLModelConfiguration())
+             let model = try VNCoreMLModel(for: classifier.model)
+             let request = VNCoreMLRequest(model: model, completionHandler: {
+                 [weak self] request,error in
+                 self?.processObservations(for: request, error: error)
+             })
+             request.imageCropAndScaleOption = .centerCrop
+             return request
+         } catch {
+             fatalError("Failed to create request")
+         }
+     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -116,8 +131,11 @@ class ViewController: UIViewController {
         let scaledImage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 299, height: 299))
         guard let pixelbuffer = scaledImage.toCVPixelBuffer() else { return }
         let handler = VNImageRequestHandler(cvPixelBuffer: pixelbuffer)
+        let healthHandler = VNImageRequestHandler(cvPixelBuffer: pixelbuffer)
         do {
+            self.resultsLabel.text! = ""
             try handler.perform([self.classificationRequest])
+            try healthHandler.perform([self.healthClassificationRequest])
         } catch {
             print("Failed to perform classification: \(error)")
         }
@@ -144,10 +162,16 @@ extension ViewController {
                 let result = results[0].identifier
                 let confidence = results[0].confidence
                 if confidence < 0.8 {
-                    self.resultsLabel.text! = "It is " + result + "? Not sure"
+                    if self.resultsLabel.text?.isEmpty == false {
+                        self.resultsLabel.text! += "\n"
+                    }
+                    self.resultsLabel.text! += "It is " + result + "? Not sure"
                 } else {
-                    self.resultsLabel.text = result
-                    self.resultsLabel.text! += "\n"
+                    if self.resultsLabel.text?.isEmpty == false {
+                        self.resultsLabel.text! += "\n"
+                    }
+                    self.resultsLabel.text! += result
+                    self.resultsLabel.text! += " - "
                     self.resultsLabel.text! += String(format: "%.1f%%", confidence * 100)
                     print(result)
                 }

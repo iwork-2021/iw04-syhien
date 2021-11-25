@@ -12,6 +12,7 @@
 		7BF6C662204818EC00606217 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6C661204818EC00606217 /* ViewController.swift */; };
 		7BF6C665204818EC00606217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF6C663204818EC00606217 /* Main.storyboard */; };
 		7BF6C667204818ED00606217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BF6C666204818ED00606217 /* Assets.xcassets */; };
+		7CC2C2D5274FB133002DE1FE /* HealthClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7CC2C2D4274FB133002DE1FE /* HealthClassifier.mlmodel */; };
 		7CD3813D2748FEF500C418A4 /* SnacksClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3813C2748FEF500C418A4 /* SnacksClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		7BF6C664204818EC00606217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BF6C666204818ED00606217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BF6C66B204818ED00606217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CC2C2D4274FB133002DE1FE /* HealthClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HealthClassifier.mlmodel; sourceTree = "<group>"; };
 		7CD3813C2748FEF500C418A4 /* SnacksClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SnacksClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +60,7 @@
 			children = (
 				7BF6C65F204818EC00606217 /* AppDelegate.swift */,
 				7BF6C661204818EC00606217 /* ViewController.swift */,
+				7CC2C2D4274FB133002DE1FE /* HealthClassifier.mlmodel */,
 				7B11BA822048333700D790AA /* CGImagePropertyOrientation.swift */,
 				7CD3813C2748FEF500C418A4 /* SnacksClassifier.mlmodel */,
 				7BF6C663204818EC00606217 /* Main.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CD3813D2748FEF500C418A4 /* SnacksClassifier.mlmodel in Sources */,
+				7CC2C2D5274FB133002DE1FE /* HealthClassifier.mlmodel in Sources */,
 				7BF6C662204818EC00606217 /* ViewController.swift in Sources */,
 				7BF6C660204818EC00606217 /* AppDelegate.swift in Sources */,
 				7B11BA832048333700D790AA /* CGImagePropertyOrientation.swift in Sources */,
