@@ -2,7 +2,7 @@
 # iw04
 iOS assignment 4: Image Classification App.
 
-[数据集下载](https://box.nju.edu.cn/f/0fde100e73b2405abe1e/?dl=1)
+[原始数据集下载](https://box.nju.edu.cn/f/0fde100e73b2405abe1e/?dl=1)
 
 [Demo视频](https://www.bilibili.com/video/BV1cU4y1T748/)
 
