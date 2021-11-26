@@ -6,6 +6,8 @@ iOS assignment 4: Image Classification App.
 
 [Demo视频](https://www.bilibili.com/video/BV1cU4y1T748/)
 
+[报告文档](report/report.md)
+
 作业 4-1 
   请基于模板工程(starter/HealthySnacks)，运用CoreML开发一个利用卷积神经网络分类snacks的App
 
